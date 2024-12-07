@@ -1,0 +1,40 @@
+Lexer Test Results:
+ Test Result |   Input   |        Expected       |         Actual        |
+ (Pass/fail) |           |        Outcome        |         Outcome       |
+-------------+-----------+-----------------------+-----------------------+
+Pass         |""         |[]                     |[]                     |
+Pass         |"\n"       |['EOL']                |['EOL']                |
+Pass         |";"        |['EOL']                |['EOL']                |
+Pass         |"("        |['OpenBracket']        |['OpenBracket']        |
+Pass         |")"        |['ClosedBracket']      |['ClosedBracket']      |
+Pass         |","        |['Comma']              |['Comma']              |
+Pass         |"<"        |['ComparisonOperator'] |['ComparisonOperator'] |
+Pass         |">"        |['ComparisonOperator'] |['ComparisonOperator'] |
+Pass         |"<="       |['ComparisonOperator'] |['ComparisonOperator'] |
+Pass         |">="       |['ComparisonOperator'] |['ComparisonOperator'] |
+Pass         |"=="       |['ComparisonOperator'] |['ComparisonOperator'] |
+Pass         |"+"        |['Operator']           |['Operator']           |
+Pass         |"-"        |['Operator']           |['Operator']           |
+Pass         |"*"        |['Operator']           |['Operator']           |
+Pass         |"/"        |['Operator']           |['Operator']           |
+Pass         |"^"        |['Operator']           |['Operator']           |
+Pass         |"|"        |['ConditionalOperator']|['ConditionalOperator']|
+Pass         |"="        |['Equality']           |['Equality']           |
+Pass         |"~"        |['Equality']           |['Equality']           |
+Pass         |"a"        |['NameSpace']          |['NameSpace']          |
+Pass         |"letter"   |['NameSpace']          |['NameSpace']          |
+Pass         |"a1"       |['NameSpace']          |['NameSpace']          |
+Pass         |"ae3"      |['NameSpace']          |['NameSpace']          |
+Pass         |"ae31"     |['NameSpace']          |['NameSpace']          |
+Pass         |"K9C"      |['NameSpace']          |['NameSpace']          |
+Pass         |"l7t5"     |['NameSpace']          |['NameSpace']          |
+Pass         |"0"        |['Number']             |['Number']             |
+Pass         |"123"      |['Number']             |['Number']             |
+Pass         |"2.4"      |['Number']             |['Number']             |
+Pass         |"2.44"     |['Number']             |['Number']             |
+Pass         |"22.4"     |['Number']             |['Number']             |
+Pass         |"62.42"    |['Number']             |['Number']             |
+Pass         |".429r4"   |ScanError              |ScanError the given input feed ".429r4" cannot be matched to any defined token|
+Pass         |"84889...."|ScanError              |ScanError the given input feed ".24" cannot be matched to any defined token|
+Pass         |"2944r8..."|ScanError              |ScanError the given input feed ".32r." cannot be matched to any defined token|
+Pass         |"|)(764..."|['ConditionalOperator', 'ClosedBracket', 'OpenBracket', 'Number', 'Operator', 'Comma', 'ComparisonOperator', 'Operator', 'Number', 'NameSpace', 'Equality', 'Operator', 'EOL', 'Number', 'Operator', 'NameSpace', 'EOL', 'NameSpace']|['ConditionalOperator', 'ClosedBracket', 'OpenBracket', 'Number', 'Operator', 'Comma', 'ComparisonOperator', 'Operator', 'Number', 'NameSpace', 'Equality', 'Operator', 'EOL', 'Number', 'Operator', 'NameSpace', 'EOL', 'NameSpace']|

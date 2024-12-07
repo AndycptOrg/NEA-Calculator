@@ -1,0 +1,941 @@
+digraph G {
+subgraph cluster_0{
+    label=NEA;
+    subgraph cluster_1{
+        label=time;
+        "NEA.time.sleep()" [label="sleep"];
+    }
+    subgraph cluster_2{
+        label=numpy;
+        "NEA.numpy.sin()" [label="sin"];
+        "NEA.numpy.cos()" [label="cos"];
+        "NEA.numpy.arcos()" [label="arcos"];
+        "NEA.numpy.arcsin()" [label="arcsin"];
+        "NEA.numpy.sqrt()" [label="sqrt"];
+        "NEA.numpy.ln()" [label="ln"];
+    }
+    subgraph cluster_3{
+        label=builtin;
+        subgraph cluster_4{
+            label=random;
+            "NEA.builtin.random.choice()" [label="choice"];
+        }
+        subgraph cluster_5{
+            label=object;
+            "NEA.builtin.object.__new__()" [label="__new__"];
+            "NEA.builtin.object.__init__()" [label="__init__"];
+        }
+        subgraph cluster_6{
+            label=NotImplementedError;
+            "NEA.builtin.NotImplementedError.__init__()" [label="__init__"];
+        }
+        subgraph cluster_7{
+            label=TypeError;
+            "NEA.builtin.TypeError.__init__()" [label="__init__"];
+        }
+        subgraph cluster_8{
+            label=KeyError;
+            "NEA.builtin.KeyError.__init__()" [label="__init__"];
+        }
+        subgraph cluster_9{
+            label=IndexError;
+            "NEA.builtin.IndexError.__init__()" [label="__init__"];
+        }
+        subgraph cluster_10{
+            label=ValueError;
+            "NEA.builtin.ValueError.__init__()" [label="__init__"];
+        }
+        "NEA.builtin.quit()" [label="quit"];
+        "NEA.builtin.print()" [label="print"];
+        "NEA.builtin.type()" [label="type"];
+        "NEA.builtin.isinstance()" [label="isinstance"];
+        "NEA.builtin.all()" [label="all"];
+        "NEA.builtin.any()" [label="any"];
+        "NEA.builtin.zip()" [label="zip"];
+        "NEA.builtin.enumerate()" [label="enumerate"];
+        "NEA.builtin.map()" [label="map"];
+        "NEA.builtin.next()" [label="next"];
+        "NEA.builtin.send()" [label="send"];
+        "NEA.builtin.len()" [label="len"];
+        "NEA.builtin.range()" [label="range"];
+        "NEA.builtin.sum()" [label="sum"];
+        "NEA.builtin.repr()" [label="repr"];
+        "NEA.builtin.dir()" [label="dir"];
+        "NEA.builtin.open()" [label="open"];
+        subgraph cluster_11{
+            label=IO;
+            "NEA.builtin.IO.write()" [label="write"];
+        }
+        subgraph cluster_12{
+            label=list;
+            "NEA.builtin.list.__init__()" [label="__init__"];
+            "NEA.builtin.list.append()" [label="append"];
+            "NEA.builtin.list.pop()" [label="pop"];
+            "NEA.builtin.list.remove()" [label="remove"];
+        }
+        subgraph cluster_13{
+            label=set;
+            "NEA.builtin.set.__init__()" [label="__init__"];
+            "NEA.builtin.set.difference()" [label="difference"];
+        }
+        subgraph cluster_14{
+            label=int;
+            "NEA.builtin.int.__init__()" [label="__init__"];
+            "NEA.builtin.int.__call__()" [label="__call__"];
+        }
+        subgraph cluster_15{
+            label=float;
+            "NEA.builtin.float.__new__()" [label="__new__"];
+            "NEA.builtin.float.__init__()" [label="__init__"];
+            "NEA.builtin.float.__call__()" [label="__call__"];
+            "NEA.builtin.float.__add__()" [label="__add__"];
+            "NEA.builtin.float.__sub__()" [label="__sub__"];
+            "NEA.builtin.float.__mul__()" [label="__mul__"];
+            "NEA.builtin.float.__truediv__()" [label="__truediv__"];
+            "NEA.builtin.float.__pow__()" [label="__pow__"];
+        }
+        subgraph cluster_16{
+            label=str;
+            "NEA.builtin.str.__init__()" [label="__init__"];
+            "NEA.builtin.str.join()" [label="join"];
+            "NEA.builtin.str.split()" [label="split"];
+            "NEA.builtin.str.isalpha()" [label="isalpha"];
+            "NEA.builtin.str.isalnum()" [label="isalnum"];
+            "NEA.builtin.str.isdigit()" [label="isdigit"];
+            "NEA.builtin.str.replace()" [label="replace"];
+            "NEA.builtin.str.format()" [label="format"];
+        }
+        subgraph cluster_17{
+            label=dict;
+            "NEA.builtin.dict.__init__()" [label="__init__"];
+            "NEA.builtin.dict.items()" [label="items"];
+            "NEA.builtin.dict.keys()" [label="keys"];
+            "NEA.builtin.dict.values()" [label="values"];
+            "NEA.builtin.dict.get()" [label="get"];
+        }
+    }
+    subgraph cluster_18{
+        label=monad;
+        subgraph cluster_19{
+            label=Monad;
+            "NEA.monad.Monad.__init__()" [label="__init__"];
+            "NEA.monad.Monad.Just()" [label="Just"];
+            "NEA.monad.Monad.map()" [label="map"];
+            "NEA.monad.Monad.bind()" [label="bind"];
+            "NEA.monad.Monad.getInternalImp()" [label="getInternalImp"];
+            "NEA.monad.Monad.__rshift__()" [label="__rshift__"];
+        }
+        subgraph cluster_20{
+            label=Maybe;
+            "NEA.monad.Maybe.__init__()" [label="__init__"];
+            "NEA.monad.Maybe.Just()" [label="Just"];
+            "NEA.monad.Maybe.map()" [label="map"];
+            "NEA.monad.Maybe.bind()" [label="bind"];
+            "NEA.monad.Maybe.__eq__()" [label="__eq__"];
+            "NEA.monad.Maybe.__str__()" [label="__str__"];
+            "NEA.monad.Maybe.__repr__()" [label="__repr__"];
+            "NEA.monad.Maybe.__rshift__()" [label="__rshift__"];
+        }
+        "NEA.monad.MaybeTest()" [label="MaybeTest"];
+            "NEA.monad.MaybeTest().maybeDivide()" [label="maybeDivide"];
+        subgraph cluster_21{
+            label=ListMonad;
+            "NEA.monad.ListMonad.__init__()" [label="__init__"];
+            "NEA.monad.ListMonad.Just()" [label="Just"];
+            "NEA.monad.ListMonad.head()" [label="head"];
+            "NEA.monad.ListMonad.tail()" [label="tail"];
+            "NEA.monad.ListMonad.contents()" [label="contents"];
+            "NEA.monad.ListMonad.map()" [label="map"];
+            "NEA.monad.ListMonad.flatmap()" [label="flatmap"];
+            "NEA.monad.ListMonad.bind()" [label="bind"];
+            "NEA.monad.ListMonad.__pow__()" [label="__pow__"];
+            "NEA.monad.ListMonad.__len__()" [label="__len__"];
+            "NEA.monad.ListMonad.toList()" [label="toList"];
+            "NEA.monad.ListMonad.__str__()" [label="__str__"];
+            "NEA.monad.ListMonad.__repr__()" [label="__repr__"];
+        }
+        "NEA.monad.ListMonadTest()" [label="ListMonadTest"];
+            "NEA.monad.ListMonadTest().split()" [label="split"];
+    }
+    subgraph cluster_22{
+        label=utilities;
+        subgraph cluster_23{
+            label=JSONable;
+            "NEA.utilities.JSONable.JSON()" [label="JSON"];
+        }
+        "NEA.utilities.dictBeautify()" [label="dictBeautify"];
+            "NEA.utilities.dictBeautify().reverse()" [label="reverse"];
+            "NEA.utilities.dictBeautify().addToStart()" [label="addToStart"];
+        subgraph cluster_24{
+            label=Stack;
+            "NEA.utilities.Stack.__init__()" [label="__init__"];
+            "NEA.utilities.Stack.is_empty()" [label="is_empty"];
+            "NEA.utilities.Stack.push()" [label="push"];
+            "NEA.utilities.Stack.pop()" [label="pop"];
+            "NEA.utilities.Stack.peek()" [label="peek"];
+            "NEA.utilities.Stack.__len__()" [label="__len__"];
+        }
+        "NEA.utilities.test()" [label="test"];
+            "NEA.utilities.test().actual_wrapper()" [label="actual_wrapper"];
+                "NEA.utilities.test().actual_wrapper()._()" [label="_"];
+        "NEA.utilities.unwrap_dict()" [label="unwrap_dict"];
+        "NEA.utilities.unwrap_dict_tests()" [label="unwrap_dict_tests"];
+    }
+    subgraph cluster_25{
+        label=mathobj;
+        subgraph cluster_26{
+            label=Value;
+            "NEA.mathobj.Value.__new__()" [label="__new__"];
+            "NEA.mathobj.Value.__init__()" [label="__init__"];
+            "NEA.mathobj.Value.__call__()" [label="__call__"];
+        }
+        subgraph cluster_27{
+            label=NPArray;
+            "NEA.mathobj.NPArray.__new__()" [label="__new__"];
+            "NEA.mathobj.NPArray.__init__()" [label="__init__"];
+            "NEA.mathobj.NPArray.__call__()" [label="__call__"];
+            "NEA.mathobj.NPArray.get_array()" [label="get_array"];
+            "NEA.mathobj.NPArray.__add__()" [label="__add__"];
+            "NEA.mathobj.NPArray.__radd__()" [label="__radd__"];
+            "NEA.mathobj.NPArray.__sub__()" [label="__sub__"];
+            "NEA.mathobj.NPArray.__rsub__()" [label="__rsub__"];
+            "NEA.mathobj.NPArray.__mul__()" [label="__mul__"];
+            "NEA.mathobj.NPArray.__rmul__()" [label="__rmul__"];
+            "NEA.mathobj.NPArray.__truediv__()" [label="__truediv__"];
+            "NEA.mathobj.NPArray.__rtruediv__()" [label="__rtruediv__"];
+            "NEA.mathobj.NPArray.__pow__()" [label="__pow__"];
+            "NEA.mathobj.NPArray.__rpow__()" [label="__rpow__"];
+        }
+        subgraph cluster_28{
+            label=Undefined;
+            "NEA.mathobj.Undefined.__new__()" [label="__new__"];
+            "NEA.mathobj.Undefined.__init__()" [label="__init__"];
+            "NEA.mathobj.Undefined.__call__()" [label="__call__"];
+            "NEA.mathobj.Undefined.__add__()" [label="__add__"];
+            "NEA.mathobj.Undefined.__radd__()" [label="__radd__"];
+            "NEA.mathobj.Undefined.__sub__()" [label="__sub__"];
+            "NEA.mathobj.Undefined.__rsub__()" [label="__rsub__"];
+            "NEA.mathobj.Undefined.__mul__()" [label="__mul__"];
+            "NEA.mathobj.Undefined.__rmul__()" [label="__rmul__"];
+            "NEA.mathobj.Undefined.__truediv__()" [label="__truediv__"];
+            "NEA.mathobj.Undefined.__rtruediv__()" [label="__rtruediv__"];
+            "NEA.mathobj.Undefined.__pow__()" [label="__pow__"];
+            "NEA.mathobj.Undefined.__rpow__()" [label="__rpow__"];
+            "NEA.mathobj.Undefined.__repr__()" [label="__repr__"];
+        }
+        subgraph cluster_29{
+            label=Number;
+            "NEA.mathobj.Number.__new__()" [label="__new__"];
+            "NEA.mathobj.Number.__init__()" [label="__init__"];
+            "NEA.mathobj.Number.__float__()" [label="__float__"];
+            "NEA.mathobj.Number.__call__()" [label="__call__"];
+            "NEA.mathobj.Number.__add__()" [label="__add__"];
+            "NEA.mathobj.Number.__sub__()" [label="__sub__"];
+            "NEA.mathobj.Number.__mul__()" [label="__mul__"];
+            "NEA.mathobj.Number.__truediv__()" [label="__truediv__"];
+            "NEA.mathobj.Number.__pow__()" [label="__pow__"];
+            "NEA.mathobj.Number.__repr__()" [label="__repr__"];
+        }
+        "NEA.mathobj.value_test()" [label="value_test"];
+    }
+    subgraph cluster_30{
+        label=lexer;
+        subgraph cluster_31{
+            label=NotCompatibleException;
+            "NEA.lexer.NotCompatibleException.__init__()" [label="__init__"];
+        }
+        subgraph cluster_32{
+            label=Token;
+            "NEA.lexer.Token.Take()" [label="Take"];
+            "NEA.lexer.Token.JSON()" [label="JSON"];
+            "NEA.lexer.Token.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_33{
+            label=EOL;
+            "NEA.lexer.EOL.__init__()" [label="__init__"];
+            "NEA.lexer.EOL.Take()" [label="Take"];
+            "NEA.lexer.EOL.JSON()" [label="JSON"];
+            "NEA.lexer.EOL.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_34{
+            label=OpenBracket;
+            "NEA.lexer.OpenBracket.__init__()" [label="__init__"];
+            "NEA.lexer.OpenBracket.Take()" [label="Take"];
+            "NEA.lexer.OpenBracket.JSON()" [label="JSON"];
+            "NEA.lexer.OpenBracket.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_35{
+            label=ClosedBracket;
+            "NEA.lexer.ClosedBracket.__init__()" [label="__init__"];
+            "NEA.lexer.ClosedBracket.Take()" [label="Take"];
+            "NEA.lexer.ClosedBracket.JSON()" [label="JSON"];
+            "NEA.lexer.ClosedBracket.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_36{
+            label=Comma;
+            "NEA.lexer.Comma.__init__()" [label="__init__"];
+            "NEA.lexer.Comma.Take()" [label="Take"];
+            "NEA.lexer.Comma.JSON()" [label="JSON"];
+            "NEA.lexer.Comma.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_37{
+            label=ComparisonOperator;
+            "NEA.lexer.ComparisonOperator.__init__()" [label="__init__"];
+            "NEA.lexer.ComparisonOperator.Take()" [label="Take"];
+            "NEA.lexer.ComparisonOperator.JSON()" [label="JSON"];
+            "NEA.lexer.ComparisonOperator.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_38{
+            label=Operator;
+            "NEA.lexer.Operator.__init__()" [label="__init__"];
+            "NEA.lexer.Operator.Take()" [label="Take"];
+            "NEA.lexer.Operator.JSON()" [label="JSON"];
+            "NEA.lexer.Operator.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_39{
+            label=ConditionalOperator;
+            "NEA.lexer.ConditionalOperator.__init__()" [label="__init__"];
+            "NEA.lexer.ConditionalOperator.Take()" [label="Take"];
+            "NEA.lexer.ConditionalOperator.JSON()" [label="JSON"];
+            "NEA.lexer.ConditionalOperator.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_40{
+            label=Equality;
+            "NEA.lexer.Equality.__init__()" [label="__init__"];
+            "NEA.lexer.Equality.Take()" [label="Take"];
+            "NEA.lexer.Equality.JSON()" [label="JSON"];
+            "NEA.lexer.Equality.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_41{
+            label=NameSpace;
+            "NEA.lexer.NameSpace.__init__()" [label="__init__"];
+            "NEA.lexer.NameSpace.Take()" [label="Take"];
+            "NEA.lexer.NameSpace.JSON()" [label="JSON"];
+            "NEA.lexer.NameSpace.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_42{
+            label=Number;
+            "NEA.lexer.Number.__init__()" [label="__init__"];
+            "NEA.lexer.Number.Take()" [label="Take"];
+            "NEA.lexer.Number.JSON()" [label="JSON"];
+            "NEA.lexer.Number.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_43{
+            label=ScanError;
+            "NEA.lexer.ScanError.__init__()" [label="__init__"];
+            "NEA.lexer.ScanError.__eq__()" [label="__eq__"];
+        }
+        "NEA.lexer.scanner()" [label="scanner"];
+        "NEA.lexer.tokenize()" [label="tokenize"];
+        "NEA.lexer.LexerTest()" [label="LexerTest"];
+            "NEA.lexer.LexerTest().scannerTest()" [label="scannerTest"];
+    }
+    subgraph cluster_44{
+        label=parser;
+        subgraph cluster_45{
+            label=NotCompatibleException;
+            "NEA.parser.NotCompatibleException.__init__()" [label="__init__"];
+            "NEA.parser.NotCompatibleException.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_46{
+            label="Node";
+            "NEA.parser.Node.__init__()" [label="__init__"];
+            "NEA.parser.Node.Take()" [label="Take"];
+            "NEA.parser.Node.JSON()" [label="JSON"];
+            "NEA.parser.Node.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_47{
+            label=Inequality;
+            "NEA.parser.Inequality.__init__()" [label="__init__"];
+            "NEA.parser.Inequality.Take()" [label="Take"];
+            "NEA.parser.Inequality.JSON()" [label="JSON"];
+            "NEA.parser.Inequality.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_48{
+            label=Conditional;
+            "NEA.parser.Conditional.__init__()" [label="__init__"];
+            "NEA.parser.Conditional.Take()" [label="Take"];
+            "NEA.parser.Conditional.JSON()" [label="JSON"];
+            "NEA.parser.Conditional.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_49{
+            label=Operand;
+            "NEA.parser.Operand.__init__()" [label="__init__"];
+            "NEA.parser.Operand.Take()" [label="Take"];
+            "NEA.parser.Operand.JSON()" [label="JSON"];
+            "NEA.parser.Operand.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_50{
+            label=Operands;
+            "NEA.parser.Operands.__init__()" [label="__init__"];
+            "NEA.parser.Operands.Take()" [label="Take"];
+            "NEA.parser.Operands.__eq__()" [label="__eq__"];
+            "NEA.parser.Operands.JSON()" [label="JSON"];
+        }
+        subgraph cluster_51{
+            label=Function;
+            "NEA.parser.Function.__init__()" [label="__init__"];
+            "NEA.parser.Function.Take()" [label="Take"];
+            "NEA.parser.Function.JSON()" [label="JSON"];
+            "NEA.parser.Function.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_52{
+            label=Assignable;
+            "NEA.parser.Assignable.__init__()" [label="__init__"];
+            "NEA.parser.Assignable.Take()" [label="Take"];
+            "NEA.parser.Assignable.JSON()" [label="JSON"];
+            "NEA.parser.Assignable.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_53{
+            label=BracketedTerm;
+            "NEA.parser.BracketedTerm.__init__()" [label="__init__"];
+                "NEA.parser.BracketedTerm.__init__().TypeError.__init__()" [label="TypeError.__init__"];
+            "NEA.parser.BracketedTerm.Take()" [label="Take"];
+            "NEA.parser.BracketedTerm.JSON()" [label="JSON"];
+            "NEA.parser.BracketedTerm.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_54{
+            label=Term;
+            "NEA.parser.Term.__init__()" [label="__init__"];
+            "NEA.parser.Term.Take()" [label="Take"];
+            "NEA.parser.Term.JSON()" [label="JSON"];
+            "NEA.parser.Term.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_55{
+            label=Expression;
+            "NEA.parser.Expression.__init__()" [label="__init__"];
+            "NEA.parser.Expression.Take()" [label="Take"];
+            "NEA.parser.Expression.JSON()" [label="JSON"];
+            "NEA.parser.Expression.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_56{
+            label=Assignment;
+            "NEA.parser.Assignment.__init__()" [label="__init__"];
+            "NEA.parser.Assignment.Take()" [label="Take"];
+            "NEA.parser.Assignment.JSON()" [label="JSON"];
+            "NEA.parser.Assignment.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_57{
+            label=Statement;
+            "NEA.parser.Statement.__init__()" [label="__init__"];
+            "NEA.parser.Statement.Take()" [label="Take"];
+            "NEA.parser.Statement.JSON()" [label="JSON"];
+            "NEA.parser.Statement.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_58{
+            label=Line;
+            "NEA.parser.Line.__init__()" [label="__init__"];
+            "NEA.parser.Line.Take()" [label="Take"];
+            "NEA.parser.Line.JSON()" [label="JSON"];
+            "NEA.parser.Line.__eq__()" [label="__eq__"];
+        }
+        subgraph cluster_59{
+            label=Lines;
+            "NEA.parser.Lines.__init__()" [label="__init__"];
+            "NEA.parser.Lines.Take()" [label="Take"];
+            "NEA.parser.Lines.JSON()" [label="JSON"];
+            "NEA.parser.Lines.__eq__()" [label="__eq__"];
+        }
+        "NEA.parser.ParseTest()" [label="ParseTest"];
+            "NEA.parser.ParseTest().Tester()" [label="Tester"];
+        subgraph cluster_60{
+            label=ParseError;
+            "NEA.parser.ParseError.__init__()" [label="__init__"];
+        }
+        "NEA.parser.parse()" [label="parse"];
+        "NEA.parser.junk()" [label="junk"];
+            "NEA.parser.junk().testMatching()" [label="testMatching"];
+    }
+    subgraph cluster_61{
+        label=controlunit;
+        subgraph cluster_62{
+            label=Visitor;
+            "NEA.controlunit.Visitor.visited()" [label="visited"];
+        }
+        subgraph cluster_63{
+            label=TwoStepVisitor;
+            "NEA.controlunit.TwoStepVisitor.visited()" [label="visited"];
+        }
+        subgraph cluster_64{
+            label=Visitee;
+            "NEA.controlunit.Visitee.visit()" [label="visit"];
+        }
+        subgraph cluster_65{
+            label=SubTree;
+            "NEA.controlunit.SubTree.__new__()" [label="__new__"];
+            "NEA.controlunit.SubTree.__init__()" [label="__init__"];
+            "NEA.controlunit.SubTree.visit()" [label="visit"];
+            "NEA.controlunit.SubTree.__repr__()" [label="__repr__"];
+        }
+        subgraph cluster_66{
+            label=Action;
+            "NEA.controlunit.Action.__new__()" [label="__new__"];
+            "NEA.controlunit.Action.__init__()" [label="__init__"];
+        }
+        subgraph cluster_67{
+            label=Nothing;
+            "NEA.controlunit.Nothing.__new__()" [label="__new__"];
+            "NEA.controlunit.Nothing.__init__()" [label="__init__"];
+        }
+        "NEA.controlunit.Nothing_Action_test()" [label="Nothing_Action_test"];
+        subgraph cluster_68{
+            label=Statement;
+            "NEA.controlunit.Statement.__new__()" [label="__new__"];
+            "NEA.controlunit.Statement.__init__()" [label="__init__"];
+            "NEA.controlunit.Statement.get_name()" [label="get_name"];
+            "NEA.controlunit.Statement.__repr__()" [label="__repr__"];
+        }
+        "NEA.controlunit.Statement_tests()" [label="Statement_tests"];
+        subgraph cluster_69{
+            label=BinaryOperations;
+            "NEA.controlunit.BinaryOperations.__new__()" [label="__new__"];
+            "NEA.controlunit.BinaryOperations.__init__()" [label="__init__"];
+        }
+        subgraph cluster_70{
+            label=Plus;
+            "NEA.controlunit.Plus.__new__()" [label="__new__"];
+            "NEA.controlunit.Plus.__init__()" [label="__init__"];
+        }
+        subgraph cluster_71{
+            label=Minus;
+            "NEA.controlunit.Minus.__new__()" [label="__new__"];
+            "NEA.controlunit.Minus.__init__()" [label="__init__"];
+        }
+        subgraph cluster_72{
+            label=Multiply;
+            "NEA.controlunit.Multiply.__new__()" [label="__new__"];
+            "NEA.controlunit.Multiply.__init__()" [label="__init__"];
+        }
+        subgraph cluster_73{
+            label=Divide;
+            "NEA.controlunit.Divide.__new__()" [label="__new__"];
+            "NEA.controlunit.Divide.__init__()" [label="__init__"];
+        }
+        subgraph cluster_74{
+            label=Exponentiation;
+            "NEA.controlunit.Exponentiation.__new__()" [label="__new__"];
+            "NEA.controlunit.Exponentiation.__init__()" [label="__init__"];
+        }
+        subgraph cluster_75{
+            label=Comparisons;
+            "NEA.controlunit.Comparisons.operation()" [label="operation"];
+            "NEA.controlunit.Comparisons.__new__()" [label="__new__"];
+            "NEA.controlunit.Comparisons.__init__()" [label="__init__"];
+        }
+        subgraph cluster_76{
+            label=GreaterThan;
+            "NEA.controlunit.GreaterThan.operation()" [label="operation"];
+            "NEA.controlunit.GreaterThan.__new__()" [label="__new__"];
+            "NEA.controlunit.GreaterThan.__init__()" [label="__init__"];
+        }
+        subgraph cluster_77{
+            label=LessThan;
+            "NEA.controlunit.LessThan.operation()" [label="operation"];
+            "NEA.controlunit.LessThan.__new__()" [label="__new__"];
+            "NEA.controlunit.LessThan.__init__()" [label="__init__"];
+        }
+        subgraph cluster_78{
+            label=GreaterThanEquals;
+            "NEA.controlunit.GreaterThanEquals.operation()" [label="operation"];
+            "NEA.controlunit.GreaterThanEquals.__new__()" [label="__new__"];
+            "NEA.controlunit.GreaterThanEquals.__init__()" [label="__init__"];
+        }
+        subgraph cluster_79{
+            label=LessThanEquals;
+            "NEA.controlunit.LessThanEquals.operation()" [label="operation"];
+            "NEA.controlunit.LessThanEquals.__new__()" [label="__new__"];
+            "NEA.controlunit.LessThanEquals.__init__()" [label="__init__"];
+        }
+        subgraph cluster_80{
+            label=Equals;
+            "NEA.controlunit.Equals.operation()" [label="operation"];
+            "NEA.controlunit.Equals.__new__()" [label="__new__"];
+            "NEA.controlunit.Equals.__init__()" [label="__init__"];
+        }
+        subgraph cluster_81{
+            label=Operand;
+            "NEA.controlunit.Operand.__new__()" [label="__new__"];
+            "NEA.controlunit.Operand.__init__()" [label="__init__"];
+            "NEA.controlunit.Operand.__init__()" [label="__init__"];
+        }
+        subgraph cluster_82{
+            label=Inequality;
+            "NEA.controlunit.Inequality.__new__()" [label="__new__"];
+            "NEA.controlunit.Inequality.__init__()" [label="__init__"];
+        }
+        subgraph cluster_83{
+            label=Conditional;
+            "NEA.controlunit.Conditional.__new__()" [label="__new__"];
+            "NEA.controlunit.Conditional.__init__()" [label="__init__"];
+        }
+        "NEA.controlunit.incon_tests()" [label="incon_tests"];
+        subgraph cluster_84{
+            label=Term;
+            "NEA.controlunit.Term.__new__()" [label="__new__"];
+            "NEA.controlunit.Term.__init__()" [label="__init__"];
+        }
+        subgraph cluster_85{
+            label=Literal;
+            "NEA.controlunit.Literal.__new__()" [label="__new__"];
+            "NEA.controlunit.Literal.__init__()" [label="__init__"];
+            "NEA.controlunit.Literal.__call__()" [label="__call__"];
+            "NEA.controlunit.Literal.get_value()" [label="get_value"];
+            "NEA.controlunit.Literal.__repr__()" [label="__repr__"];
+        }
+        subgraph cluster_86{
+            label=Variable;
+            "NEA.controlunit.Variable.__new__()" [label="__new__"];
+            "NEA.controlunit.Variable.__init__()" [label="__init__"];
+            "NEA.controlunit.Variable.get_name()" [label="get_name"];
+            "NEA.controlunit.Variable.__repr__()" [label="__repr__"];
+        }
+        subgraph cluster_87{
+            label=Function;
+            "NEA.controlunit.Function.__new__()" [label="__new__"];
+            "NEA.controlunit.Function.__init__()" [label="__init__"];
+            "NEA.controlunit.Function.get_name()" [label="get_name"];
+            "NEA.controlunit.Function.__repr__()" [label="__repr__"];
+        }
+        subgraph cluster_88{
+            label=Expression;
+            "NEA.controlunit.Expression.__new__()" [label="__new__"];
+            "NEA.controlunit.Expression.__init__()" [label="__init__"];
+        }
+        subgraph cluster_89{
+            label=NegatedTerm;
+            "NEA.controlunit.NegatedTerm.__new__()" [label="__new__"];
+            "NEA.controlunit.NegatedTerm.__init__()" [label="__init__"];
+        }
+        subgraph cluster_90{
+            label=BracketedTerm;
+            "NEA.controlunit.BracketedTerm.__new__()" [label="__new__"];
+            "NEA.controlunit.BracketedTerm.__init__()" [label="__init__"];
+        }
+        "NEA.controlunit.Expression_tests()" [label="Expression_tests"];
+        subgraph cluster_91{
+            label=Assignment;
+            subgraph cluster_92{
+                label=AssignmentError;
+                "NEA.controlunit.Assignment.AssignmentError.__init__()" [label="__init__"];
+            }
+            "NEA.controlunit.Assignment.__new__()" [label="__new__"];
+            "NEA.controlunit.Assignment.__init__()" [label="__init__"];
+            "NEA.controlunit.Assignment.get_assignee()" [label="get_assignee"];
+            "NEA.controlunit.Assignment.__repr__()" [label="__repr__"];
+        }
+        "NEA.controlunit.assignment_tests()" [label="assignment_tests"];
+        subgraph cluster_93{
+            label=Functor;
+            "NEA.controlunit.Functor.__new__()" [label="__new__"];
+            "NEA.controlunit.Functor.__init__()" [label="__init__"];
+            subgraph cluster_94{
+                label=CalculationUnit;
+                "NEA.controlunit.Functor.CalculationUnit.__init__()" [label="__init__"];
+                "NEA.controlunit.Functor.CalculationUnit.visited()" [label="visited"];
+            }
+            "NEA.controlunit.Functor.__call__()" [label="__call__"];
+            "NEA.controlunit.Functor.__neg__()" [label="__neg__"];
+            "NEA.controlunit.Functor.__add__()" [label="__add__"];
+            "NEA.controlunit.Functor.__radd__()" [label="__radd__"];
+            "NEA.controlunit.Functor.__sub__()" [label="__sub__"];
+            "NEA.controlunit.Functor.__rsub__()" [label="__rsub__"];
+            "NEA.controlunit.Functor.__mul__()" [label="__mul__"];
+            "NEA.controlunit.Functor.__rmul__()" [label="__rmul__"];
+            "NEA.controlunit.Functor.__truediv__()" [label="__truediv__"];
+            "NEA.controlunit.Functor.__rtruediv__()" [label="__rtruediv__"];
+            "NEA.controlunit.Functor.__pow__()" [label="__pow__"];
+            "NEA.controlunit.Functor.__rpow__()" [label="__rpow__"];
+        }
+        subgraph cluster_95{
+            label=CustomFunctor;
+            "NEA.controlunit.CustomFunctor.__init__()" [label="__init__"];
+            "NEA.controlunit.CustomFunctor.__call__()" [label="__call__"];
+        }
+        subgraph cluster_96{
+            label=TrigMode;
+        subgraph cluster_97{
+            label=CalculationUnit;
+            subgraph cluster_98{
+                label=CalculationUnitExceptions;
+                "NEA.controlunit.CalculationUnit.CalculationUnitExceptions.__init__()" [label="__init__"];
+            }
+            subgraph cluster_99{
+                label=VariableNameNotFoundException;
+                "NEA.controlunit.CalculationUnit.VariableNameNotFoundException.__init__()" [label="__init__"];
+            }
+            subgraph cluster_100{
+                label=ImmutableVariablesException;
+                "NEA.controlunit.CalculationUnit.ImmutableVariablesException.__init__()" [label="__init__"];
+            }
+            subgraph cluster_101{
+                label=ParameterMisMatchException;
+                "NEA.controlunit.CalculationUnit.ParameterMisMatchException.__init__()" [label="__init__"];
+            }
+            "NEA.controlunit.CalculationUnit.transform()" [label="transform"];
+            "NEA.controlunit.CalculationUnit.value_check()" [label="value_check"];
+            "NEA.controlunit.CalculationUnit.undefined_carry_forward()" [label="undefined_carry_forward"];
+            "NEA.controlunit.CalculationUnit.composable_function()" [label="composable_function"];
+            "NEA.controlunit.CalculationUnit.trig_function()" [label="trig_function"];
+            "NEA.controlunit.CalculationUnit.inverse_trig_function()" [label="inverse_trig_function"];
+            "NEA.controlunit.CalculationUnit.sin()" [label="sin"];
+            "NEA.controlunit.CalculationUnit.cos()" [label="cos"];
+            "NEA.controlunit.CalculationUnit.arcsin()" [label="arcsin"];
+            "NEA.controlunit.CalculationUnit.arcos()" [label="arcos"];
+            "NEA.controlunit.CalculationUnit.sqrt()" [label="sqrt"];
+            "NEA.controlunit.CalculationUnit.ln()" [label="ln"];
+            "NEA.controlunit.CalculationUnit.__init__()" [label="__init__"];
+            "NEA.controlunit.CalculationUnit.set_control_states()" [label="set_control_states"];
+            "NEA.controlunit.CalculationUnit.get_control_states()" [label="get_control_states"];
+            "NEA.controlunit.CalculationUnit.visited()" [label="visited"];
+            "NEA.controlunit.CalculationUnit.set_variable()" [label="set_variable"];
+            "NEA.controlunit.CalculationUnit.get_variables()" [label="get_variables"];
+            "NEA.controlunit.CalculationUnit.set_function()" [label="set_function"];
+            "NEA.controlunit.CalculationUnit.get_functions()" [label="get_functions"];
+            "NEA.controlunit.CalculationUnit.begin_function_creation()" [label="begin_function_creation"];
+            "NEA.controlunit.CalculationUnit.end_function_creation()" [label="end_function_creation"];
+        }
+        subgraph cluster_102{
+            label=ControlUnit;
+            "NEA.controlunit.ControlUnit.__init__()" [label="__init__"];
+            "NEA.controlunit.ControlUnit._interpret()" [label="_interpret"];
+            "NEA.controlunit.ControlUnit.receive()" [label="receive"];
+            "NEA.controlunit.ControlUnit.get_Lines_Visited()" [label="get_Lines_Visited"];
+            subgraph cluster_103{
+                label=ActionVisitor;
+                "NEA.controlunit.ControlUnit.ActionVisitor.__init__()" [label="__init__"];
+                "NEA.controlunit.ControlUnit.ActionVisitor.visited()" [label="visited"];
+            }
+            "NEA.controlunit.ControlUnit.get_Lines_Action()" [label="get_Lines_Action"];
+            "NEA.controlunit.ControlUnit.set_settings()" [label="set_settings"];
+            "NEA.controlunit.ControlUnit.get_settings()" [label="get_settings"];
+            "NEA.controlunit.ControlUnit.get_variables()" [label="get_variables"];
+            "NEA.controlunit.ControlUnit.get_functions()" [label="get_functions"];
+        }
+        subgraph cluster_104{
+            label=UserInterfaceInterface;
+            subgraph cluster_105{
+                label=UserDoneEvent;
+                "NEA.controlunit.UserInterfaceInterface.UserDoneEvent.__init__()" [label="__init__"];
+            }
+            "NEA.controlunit.UserInterfaceInterface.__init__()" [label="__init__"];
+            "NEA.controlunit.UserInterfaceInterface.set_instruction()" [label="set_instruction"];
+            "NEA.controlunit.UserInterfaceInterface.get_calculated_results()" [label="get_calculated_results"];
+            "NEA.controlunit.UserInterfaceInterface.send_visitor()" [label="send_visitor"];
+            "NEA.controlunit.UserInterfaceInterface.set_settings()" [label="set_settings"];
+            "NEA.controlunit.UserInterfaceInterface.get_settings()" [label="get_settings"];
+            "NEA.controlunit.UserInterfaceInterface.get_variables()" [label="get_variables"];
+            "NEA.controlunit.UserInterfaceInterface.get_functions()" [label="get_functions"];
+            "NEA.controlunit.UserInterfaceInterface.get_statements()" [label="get_statements"];
+            "NEA.controlunit.UserInterfaceInterface.help()" [label="help"];
+            "NEA.controlunit.UserInterfaceInterface.Quit()" [label="Quit"];
+            "NEA.controlunit.UserInterfaceInterface.alert_improper_input()" [label="alert_improper_input"];
+        }
+    }
+}}
+"NEA.monad.Monad.__rshift__()" -> "NEA.monad.Monad.bind()";
+"NEA.monad.Maybe.map()" -> "NEA.monad.Monad.map()";
+"NEA.monad.Maybe.__rshift__()" -> "NEA.monad.Monad.__rshift__()";
+"NEA.monad.MaybeTest()" -> "NEA.monad.Maybe.bind()";
+"NEA.monad.MaybeTest()" -> "NEA.monad.MaybeTest().maybeDivide()";
+"NEA.monad.MaybeTest()" -> "NEA.monad.Maybe.__rshift__()";
+"NEA.monad.ListMonad.contents()" -> "NEA.monad.ListMonad.head()";
+"NEA.monad.ListMonad.contents()" -> "NEA.monad.ListMonad.tail()";
+"NEA.monad.ListMonad.map()" -> "NEA.monad.Maybe.map()";
+"NEA.monad.ListMonad.map()" -> "NEA.monad.ListMonad.head()";
+"NEA.monad.ListMonad.map()" -> "NEA.monad.ListMonad.tail()";
+"NEA.monad.ListMonad.flatmap()" -> "NEA.monad.ListMonad.head()";
+"NEA.monad.ListMonad.flatmap()" -> "NEA.monad.Maybe.map()";
+"NEA.monad.ListMonad.bind()" -> "NEA.monad.ListMonad.flatmap()";
+"NEA.monad.ListMonad.__pow__()" -> "NEA.monad.ListMonad.head()";
+"NEA.monad.ListMonad.__pow__()" -> "NEA.monad.ListMonad.tail()";
+"NEA.monad.ListMonad.__pow__()" -> "NEA.monad.ListMonad.__pow__()";
+"NEA.monad.ListMonad.toList()" -> "NEA.monad.ListMonad.head()";
+"NEA.monad.ListMonad.toList()" -> "NEA.monad.ListMonad.tail()";
+"NEA.monad.ListMonad.toList()" -> "NEA.monad.ListMonad.toList()";
+"NEA.monad.ListMonadTest()" -> "NEA.monad.ListMonad.map()";
+"NEA.monad.ListMonadTest()" -> "NEA.monad.ListMonad.__pow__()";
+"NEA.monad.ListMonadTest()" -> "NEA.monad.ListMonad.toList()";
+"NEA.monad.ListMonadTest()" -> "NEA.monad.ListMonadTest().split()";
+"NEA.monad.ListMonadTest()" -> "NEA.monad.ListMonad.flatmap()";
+"NEA.utilities.dictBeautify().reverse()" -> "NEA.utilities.dictBeautify().reverse()";
+"NEA.utilities.dictBeautify().reverse()" -> "NEA.monad.ListMonad.tail()";
+"NEA.utilities.dictBeautify().reverse()" -> "NEA.monad.ListMonad.head()";
+"NEA.utilities.dictBeautify().reverse()" -> "NEA.monad.ListMonad.__pow__()";
+"NEA.utilities.dictBeautify()" -> "NEA.monad.ListMonad.__pow__()";
+"NEA.utilities.dictBeautify()" -> "NEA.utilities.dictBeautify()";
+"NEA.utilities.dictBeautify()" -> "NEA.utilities.dictBeautify().reverse()";
+"NEA.utilities.dictBeautify()" -> "NEA.monad.ListMonad.head()";
+"NEA.utilities.dictBeautify()" -> "NEA.monad.ListMonad.tail()";
+"NEA.utilities.dictBeautify()" -> "NEA.monad.ListMonad.toList()";
+"NEA.utilities.dictBeautify().addToStart()" -> "NEA.monad.ListMonad.head()";
+"NEA.utilities.dictBeautify().addToStart()" -> "NEA.monad.ListMonad.tail()";
+"NEA.utilities.dictBeautify().addToStart()" -> "NEA.monad.ListMonad.__pow__()";
+"NEA.utilities.dictBeautify()" -> "NEA.utilities.dictBeautify().addToStart()";
+"NEA.utilities.dictBeautify()" -> "NEA.monad.ListMonad.map()";
+"NEA.utilities.unwrap_dict_tests()" -> "NEA.utilities.unwrap_dict()";
+"NEA.mathobj.Number.__call__()" -> "NEA.mathobj.NPArray.get_array()";
+"NEA.mathobj.value_test()" -> "NEA.utilities.test()";
+"NEA.mathobj.value_test()" -> "NEA.mathobj.Number.__truediv__()";
+"NEA.mathobj.value_test()" -> "NEA.mathobj.Number.__add__()";
+"NEA.mathobj.value_test()" -> "NEA.mathobj.Undefined.__add__()";
+"NEA.mathobj.value_test()" -> "NEA.mathobj.Number.__pow__()";
+"NEA.mathobj.value_test()" -> "NEA.mathobj.Undefined.__pow__()";
+"NEA.lexer.scanner()" -> "NEA.lexer.EOL.Take()";
+"NEA.lexer.scanner()" -> "NEA.lexer.OpenBracket.Take()";
+"NEA.lexer.scanner()" -> "NEA.lexer.ClosedBracket.Take()";
+"NEA.lexer.scanner()" -> "NEA.lexer.Comma.Take()";
+"NEA.lexer.scanner()" -> "NEA.lexer.ComparisonOperator.Take()";
+"NEA.lexer.scanner()" -> "NEA.lexer.Operator.Take()";
+"NEA.lexer.scanner()" -> "NEA.lexer.ConditionalOperator.Take()";
+"NEA.lexer.scanner()" -> "NEA.lexer.Equality.Take()";
+"NEA.lexer.scanner()" -> "NEA.lexer.NameSpace.Take()";
+"NEA.lexer.scanner()" -> "NEA.lexer.Number.Take()";
+"NEA.lexer.tokenize()" -> "NEA.lexer.scanner()";
+"NEA.lexer.LexerTest().scannerTest()" -> "NEA.lexer.scanner()";
+"NEA.lexer.LexerTest()" -> "NEA.lexer.LexerTest().scannerTest()";
+"NEA.parser.Inequality.Take()" -> "NEA.parser.Term.Take()";
+"NEA.parser.Inequality.Take()" -> "NEA.parser.Inequality.Take()";
+"NEA.parser.Inequality.JSON()" -> "NEA.parser.Term.JSON()";
+"NEA.parser.Inequality.JSON()" -> "NEA.lexer.ComparisonOperator.JSON()";
+"NEA.parser.Conditional.Take()" -> "NEA.parser.Inequality.Take()";
+"NEA.parser.Conditional.JSON()" -> "NEA.parser.Inequality.JSON()";
+"NEA.parser.Operand.Take()" -> "NEA.parser.Conditional.Take()";
+"NEA.parser.Operand.Take()" -> "NEA.parser.Inequality.Take()";
+"NEA.parser.Operand.Take()" -> "NEA.parser.Expression.Take()";
+"NEA.parser.Operand.JSON()" -> "NEA.parser.Expression.JSON()";
+"NEA.parser.Operand.JSON()" -> "NEA.parser.Inequality.JSON()";
+"NEA.parser.Operand.JSON()" -> "NEA.parser.Conditional.JSON()";
+"NEA.parser.Operands.Take()" -> "NEA.parser.Operand.Take()";
+"NEA.parser.Operands.Take()" -> "NEA.parser.Operands.Take()";
+"NEA.parser.Operands.JSON()" -> "NEA.parser.Operand.JSON()";
+"NEA.parser.Function.Take()" -> "NEA.lexer.NameSpace.JSON()";
+"NEA.parser.Function.Take()" -> "NEA.parser.Operands.Take()";
+"NEA.parser.Function.JSON()" -> "NEA.lexer.NameSpace.JSON()";
+"NEA.parser.Function.JSON()" -> "NEA.parser.Operands.JSON()";
+"NEA.parser.Assignable.Take()" -> "NEA.parser.Function.Take()";
+"NEA.parser.Assignable.JSON()" -> "NEA.parser.Function.JSON()";
+"NEA.parser.Assignable.JSON()" -> "NEA.lexer.NameSpace.JSON()";
+"NEA.parser.BracketedTerm.Take()" -> "NEA.parser.Expression.Take()";
+"NEA.parser.BracketedTerm.JSON()" -> "NEA.parser.Expression.JSON()";
+"NEA.parser.Term.Take()" -> "NEA.lexer.Operator.JSON()";
+"NEA.parser.Term.Take()" -> "NEA.parser.Term.Take()";
+"NEA.parser.Term.Take()" -> "NEA.parser.BracketedTerm.Take()";
+"NEA.parser.Term.Take()" -> "NEA.parser.Function.Take()";
+"NEA.parser.Term.JSON()" -> "NEA.lexer.Number.JSON()";
+"NEA.parser.Term.JSON()" -> "NEA.parser.Function.JSON()";
+"NEA.parser.Term.JSON()" -> "NEA.lexer.NameSpace.JSON()";
+"NEA.parser.Term.JSON()" -> "NEA.parser.BracketedTerm.JSON()";
+"NEA.parser.Expression.Take()" -> "NEA.parser.Term.Take()";
+"NEA.parser.Expression.Take()" -> "NEA.parser.Expression.Take()";
+"NEA.parser.Expression.JSON()" -> "NEA.parser.Term.JSON()";
+"NEA.parser.Expression.JSON()" -> "NEA.lexer.Operator.JSON()";
+"NEA.parser.Assignment.Take()" -> "NEA.parser.Assignable.Take()";
+"NEA.parser.Assignment.Take()" -> "NEA.parser.Expression.Take()";
+"NEA.parser.Assignment.JSON()" -> "NEA.parser.Assignable.JSON()";
+"NEA.parser.Assignment.JSON()" -> "NEA.lexer.Equality.JSON()";
+"NEA.parser.Assignment.JSON()" -> "NEA.parser.Expression.JSON()";
+"NEA.parser.Statement.Take()" -> "NEA.lexer.NameSpace.JSON()";
+"NEA.parser.Statement.Take()" -> "NEA.parser.Operands.Take()";
+"NEA.parser.Statement.JSON()" -> "NEA.lexer.NameSpace.JSON()";
+"NEA.parser.Statement.JSON()" -> "NEA.parser.Operands.JSON()";
+"NEA.parser.Line.Take()" -> "NEA.parser.Statement.Take()";
+"NEA.parser.Line.Take()" -> "NEA.parser.Assignment.Take()";
+"NEA.parser.Line.Take()" -> "NEA.parser.Expression.Take()";
+"NEA.parser.Line.JSON()" -> "NEA.parser.Assignment.JSON()";
+"NEA.parser.Line.JSON()" -> "NEA.parser.Expression.JSON()";
+"NEA.parser.Line.JSON()" -> "NEA.parser.Statement.JSON()";
+"NEA.parser.Lines.Take()" -> "NEA.parser.Line.Take()";
+"NEA.parser.Lines.Take()" -> "NEA.parser.Lines.Take()";
+"NEA.parser.Lines.JSON()" -> "NEA.parser.Line.JSON()";
+"NEA.parser.ParseTest().Tester()" -> "NEA.parser.Node.Take()";
+"NEA.parser.ParseTest().Tester()" -> "NEA.lexer.scanner()";
+"NEA.parser.ParseTest()" -> "NEA.parser.ParseTest().Tester()";
+"NEA.parser.parse()" -> "NEA.parser.Lines.Take()";
+"NEA.parser.junk().testMatching()" -> "NEA.parser.Node.Take()";
+"NEA.parser.junk()" -> "NEA.parser.junk().testMatching()";
+"NEA.parser.junk()" -> "NEA.lexer.scanner()";
+"NEA.parser.junk()" -> "NEA.utilities.dictBeautify()";
+"NEA.parser.junk()" -> "NEA.lexer.NameSpace.Take()";
+"NEA.parser.junk()" -> "NEA.lexer.NameSpace.JSON()";
+"NEA.parser.junk()" -> "NEA.parser.Lines.JSON()";
+"NEA.controlunit.TwoStepVisitor.visited()" -> "NEA.controlunit.Visitor.visited()";
+"NEA.controlunit.SubTree.visit()" -> "NEA.controlunit.Visitor.visited()";
+"NEA.controlunit.SubTree.visit()" -> "NEA.controlunit.Visitee.visit()";
+"NEA.controlunit.Action.__new__()" -> "NEA.utilities.unwrap_dict()";
+"NEA.controlunit.Statement.__repr__()" -> "NEA.controlunit.SubTree.__repr__()";
+"NEA.controlunit.Statement.__repr__()" -> "NEA.controlunit.Statement.get_name()";
+"NEA.controlunit.Statement_tests()" -> "NEA.parser.parse()";
+"NEA.controlunit.Statement_tests()" -> "NEA.lexer.tokenize()";
+"NEA.controlunit.Statement_tests()" -> "NEA.parser.Lines.JSON()";
+"NEA.controlunit.Operand.__init__()" -> "NEA.utilities.unwrap_dict()";
+"NEA.controlunit.incon_tests()" -> "NEA.parser.parse()";
+"NEA.controlunit.incon_tests()" -> "NEA.lexer.tokenize()";
+"NEA.controlunit.incon_tests()" -> "NEA.parser.Lines.JSON()";
+"NEA.controlunit.Term.__new__()" -> "NEA.utilities.unwrap_dict()";
+"NEA.controlunit.Literal.__repr__()" -> "NEA.controlunit.SubTree.__repr__()";
+"NEA.controlunit.Variable.__repr__()" -> "NEA.controlunit.SubTree.__repr__()";
+"NEA.controlunit.Variable.__repr__()" -> "NEA.controlunit.Variable.get_name()";
+"NEA.controlunit.Function.__repr__()" -> "NEA.controlunit.SubTree.__repr__()";
+"NEA.controlunit.Function.__repr__()" -> "NEA.controlunit.Function.get_name()";
+"NEA.controlunit.Expression.__init__()" -> "NEA.utilities.Stack.push()";
+"NEA.controlunit.Expression.__init__()" -> "NEA.utilities.Stack.is_empty()";
+"NEA.controlunit.Expression.__init__()" -> "NEA.utilities.Stack.peek()";
+"NEA.controlunit.Expression.__init__()" -> "NEA.utilities.Stack.pop()";
+"NEA.controlunit.Expression.__init__()" -> "NEA.utilities.Stack.push()";
+"NEA.controlunit.Expression_tests()" -> "NEA.parser.parse()";
+"NEA.controlunit.Expression_tests()" -> "NEA.lexer.tokenize()";
+"NEA.controlunit.Expression_tests()" -> "NEA.parser.Lines.JSON()";
+"NEA.controlunit.Assignment.__repr__()" -> "NEA.controlunit.SubTree.__repr__()";
+"NEA.controlunit.Assignment.__repr__()" -> "NEA.utilities.dictBeautify()";
+"NEA.controlunit.Assignment.__repr__()" -> "NEA.controlunit.Assignment.get_assignee()";
+"NEA.controlunit.assignment_tests()" -> "NEA.parser.parse()";
+"NEA.controlunit.assignment_tests()" -> "NEA.lexer.tokenize()";
+"NEA.controlunit.assignment_tests()" -> "NEA.parser.Lines.JSON()";
+"NEA.controlunit.Functor.CalculationUnit.visited()" -> "NEA.controlunit.Variable.get_name()";
+"NEA.controlunit.Functor.CalculationUnit.visited()" -> "NEA.controlunit.Literal.get_value()";
+"NEA.controlunit.Functor.CalculationUnit.visited()" -> "NEA.mathobj.Value.__call__()";
+"NEA.controlunit.Functor.CalculationUnit.visited()" -> "NEA.controlunit.Functor.CalculationUnit.visited()";
+"NEA.controlunit.Functor.__call__()" -> "NEA.controlunit.SubTree.visit()";
+"NEA.controlunit.CalculationUnit.transform()" -> "NEA.mathobj.NPArray.get_array()";
+"NEA.controlunit.CalculationUnit.sin()" -> "NEA.controlunit.CalculationUnit.transform()";
+"NEA.controlunit.CalculationUnit.cos()" -> "NEA.controlunit.CalculationUnit.transform()";
+"NEA.controlunit.CalculationUnit.arcsin()" -> "NEA.controlunit.CalculationUnit.transform()";
+"NEA.controlunit.CalculationUnit.arcos()" -> "NEA.controlunit.CalculationUnit.transform()";
+"NEA.controlunit.CalculationUnit.sqrt()" -> "NEA.controlunit.CalculationUnit.transform()";
+"NEA.controlunit.CalculationUnit.ln()" -> "NEA.controlunit.CalculationUnit.transform()";
+"NEA.controlunit.CalculationUnit.visited()" -> "NEA.controlunit.Literal.get_value()";
+"NEA.controlunit.CalculationUnit.visited()" -> "NEA.controlunit.Variable.get_name()";
+"NEA.controlunit.CalculationUnit.visited()" -> "NEA.controlunit.Function.get_name()";
+"NEA.controlunit.CalculationUnit.visited()" -> "NEA.controlunit.Comparisons.operation()";
+"NEA.controlunit.CalculationUnit.begin_function_creation()" -> "NEA.time.sleep()";
+"NEA.controlunit.CalculationUnit.end_function_creation()" -> "NEA.time.sleep()";
+"NEA.controlunit.ControlUnit.__init__()" -> "NEA.controlunit.UserInterfaceInterface.get_statements()";
+"NEA.controlunit.ControlUnit._interpret()" -> "NEA.lexer.scanner()";
+"NEA.controlunit.ControlUnit._interpret()" -> "NEA.parser.parse()";
+"NEA.controlunit.ControlUnit._interpret()" -> "NEA.parser.Lines.JSON()";
+"NEA.controlunit.ControlUnit._interpret()" -> "NEA.controlunit.UserInterfaceInterface.alert_improper_input()";
+"NEA.controlunit.ControlUnit.receive()" -> "NEA.controlunit.ControlUnit._interpret()";
+"NEA.controlunit.ControlUnit.receive()" -> "NEA.controlunit.UserInterfaceInterface.alert_improper_input()";
+"NEA.controlunit.ControlUnit.get_Lines_Visited()" -> "NEA.controlunit.SubTree.visit()";
+"NEA.controlunit.ControlUnit.ActionVisitor.visited()" -> "NEA.controlunit.CalculationUnit.visited()";
+"NEA.controlunit.ControlUnit.ActionVisitor.visited()" -> "NEA.controlunit.CalculationUnit.set_variable()";
+"NEA.controlunit.ControlUnit.ActionVisitor.visited()" -> "NEA.controlunit.Statement.get_name()";
+"NEA.controlunit.ControlUnit.ActionVisitor.visited()" -> "NEA.controlunit.Assignment.get_assignee()";
+"NEA.controlunit.ControlUnit.ActionVisitor.visited()" -> "NEA.controlunit.CalculationUnit.set_variable()";
+"NEA.controlunit.ControlUnit.ActionVisitor.visited()" -> "NEA.controlunit.CalculationUnit.begin_function_creation()";
+"NEA.controlunit.ControlUnit.ActionVisitor.visited()" -> "NEA.controlunit.CalculationUnit.end_function_creation()";
+"NEA.controlunit.ControlUnit.ActionVisitor.visited()" -> "NEA.controlunit.CalculationUnit.set_function()";
+"NEA.controlunit.ControlUnit.get_Lines_Action()" -> "NEA.controlunit.SubTree.visit()";
+"NEA.controlunit.ControlUnit.get_Lines_Action()" -> "NEA.controlunit.UserInterfaceInterface.alert_improper_input()";
+"NEA.controlunit.ControlUnit.set_settings()" -> "NEA.controlunit.CalculationUnit.set_control_states()";
+"NEA.controlunit.ControlUnit.get_settings()" -> "NEA.controlunit.CalculationUnit.get_control_states()";
+"NEA.controlunit.ControlUnit.get_variables()" -> "NEA.controlunit.CalculationUnit.get_variables()";
+"NEA.controlunit.ControlUnit.get_functions()" -> "NEA.controlunit.CalculationUnit.get_functions()";
+"NEA.controlunit.UserInterfaceInterface.set_instruction()" -> "NEA.controlunit.ControlUnit.receive()";
+"NEA.controlunit.UserInterfaceInterface.get_calculated_results()" -> "NEA.controlunit.ControlUnit.get_Lines_Action()";
+"NEA.controlunit.UserInterfaceInterface.send_visitor()" -> "NEA.controlunit.ControlUnit.get_Lines_Visited()";
+"NEA.controlunit.UserInterfaceInterface.set_settings()" -> "NEA.controlunit.ControlUnit.set_settings()";
+"NEA.controlunit.UserInterfaceInterface.get_settings()" -> "NEA.controlunit.ControlUnit.set_settings()";
+"NEA.controlunit.UserInterfaceInterface.get_variables()" -> "NEA.controlunit.ControlUnit.get_variables()";
+"NEA.controlunit.UserInterfaceInterface.get_functions()" -> "NEA.controlunit.ControlUnit.get_functions()";
+}

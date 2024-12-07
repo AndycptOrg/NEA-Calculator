@@ -1,0 +1,99 @@
+Diagram(Group(
+  Choice(0, Sequence(NonTerminal("NameSpace"), NonTerminal("Digit"), Optional(NonTerminal("NameSpace")))
+  , HorizontalChoice(Choice(13, "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"), Choice(13, "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"))
+  )
+
+, "NameSpace"))
+
+Diagram(Group(
+  Sequence(NonTerminal("Digit"), Optional(Sequence(".", NonTerminal("Digit"))))
+
+, "Number"))
+
+Diagram(Group(
+  Sequence(NonTerminal("Line"), Optional(NonTerminal("Lines")))
+
+, "Lines"))
+
+
+Diagram(Group(
+  Sequence(
+    Choice(1, NonTerminal("Assignment"), NonTerminal("Expression"), NonTerminal("Statement")
+    ),NonTerminal("EOL")
+  )
+
+, "Line"))
+
+Diagram(Group(
+  Sequence(
+    NonTerminal("Assignable"), NonTerminal("Equality"), NonTerminal("Expression")
+  )
+
+, "Assignment"))
+
+Diagram(Group(
+  OneOrMore(NonTerminal("Term"), NonTerminal("Operator"))
+
+, "Expression"))
+
+Diagram(Group(
+  Sequence(
+    Optional(OneOrMore(NonTerminal("Operator"))),
+    Choice(1, NonTerminal("Number"), NonTerminal("Function"), NonTerminal("NameSpace"), NonTerminal("BracketedTerm")
+    )
+  )
+
+, "Term"))
+
+Diagram(Group(
+  Sequence(
+    NonTerminal("OpenBracket"), NonTerminal("Expression"), NonTerminal("ClosedBracket")
+  )
+
+, "BracketedTerm"))
+
+Diagram(Group(
+  Choice(0,
+    NonTerminal("Function"), NonTerminal("NameSpace")
+  )
+
+, "Assignable"))
+
+Diagram(Group(
+  Sequence(
+    NonTerminal("NameSpace"), NonTerminal("OpenBracket"), NonTerminal("Operands")
+    ,NonTerminal("ClosedBracket")
+  )
+
+, "Function"))
+
+Diagram(Group(
+  Optional(
+  Sequence(
+    NonTerminal("Operand"), NonTerminal("Comma"), NonTerminal("Operands")
+  )
+  )
+
+, "Operands"))
+
+Diagram(Group(
+  Sequence(
+    Choice(1, NonTerminal("Conditional"), NonTerminal("Inequality"), NonTerminal("Expression")
+    )
+  )
+
+, "Operand"))
+
+Diagram(Group(
+  Sequence(
+    NonTerminal("Inequality"), NonTerminal("ConditionalOperator"), NonTerminal("Inequality")
+  )
+
+, "Conditional"))
+
+Diagram(Group(
+  Sequence(
+    NonTerminal("Term"), NonTerminal("ComparisonOperator"), NonTerminal("Term"), Optional(Sequence(NonTerminal("ComparisionOperator"), NonTerminal("Term")))
+  )
+
+, "Conditional"))
