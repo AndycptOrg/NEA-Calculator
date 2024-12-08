@@ -4,6 +4,14 @@ This is my 22-24 A-Level AQA NEA
 
 The intended outcome of this NEA is to create a complete basic calculator backend API
 
+### Acknowledgement
+Before we continue, I would like to thank my Computer Science teacher, Dr Wild, for overseeing my project.
+The reason why this NEA is the way that is is now is in large part thanks to him.
+In addition to overseeing my project, he has also been a great supporter and believer in my abilities and pushed me to pursue a more challenging topic for my NEA.
+There are many more things that he has done to propel my journey, but in short
+
+Thank You.
+
 ### Getting it Running
 As an extended goal, a command line and (mininal) graphical interface has been provided when you run the main functions in `code/user_interface.py` and `code/tktinkergraphics.py` respectively
 
@@ -16,7 +24,6 @@ the sites used to generate all the diagrams have been included in the bibliograp
 
 ### `log.txt`
 This file is generated each time the tests for the lexer or parser is run (we'll get to that later) and shows if the code passes the specifed tests
-
 
 ## Background & Warnings
 The program is **not** intended to be used as an actuall calculator backend and more so serves as a proof of concept (although if you really wanted to, who am I to stop you)
