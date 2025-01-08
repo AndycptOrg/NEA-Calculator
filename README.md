@@ -43,7 +43,20 @@ The way I have decided to read and convert text input from the interface was usi
 
 To go into a bit of the deails, 
 1. the program converts the text input into "nuggets" of independent information (tokens) via a tokenizer
-2. the program then constructs from the result of that operation a tree via a parser, which encapsulates the operations intended in the text 
+2. the program then constructs from the result of that operation a tree via a parser, which encapsulates the operations intended in the text
+3. the parsing stratagy used is commonly described as `Top Down`
+
+#### Top Down Parsing
+This stratagy is where the sequence of tokens is matched from left to right from the overarching rule and seeing if the sequence matches the pattern laid out by the syntax rules.
+
+When parsing a top down language, there is usually one rule that describes all valid sequence of tokens. So:
+1. take the left most token in the sequence and check against the overarching rule and any composed rules
+2. examine any further composed rules until a terminal rule is reached (i.e. a rule specifying a token)
+3. repeat with the next token in the sequence progressing in the rule
+
+refer to Wiki
+[or other sources](https://www.geeksforgeeks.org/working-of-top-down-parser/)
+for better explanations that do a far better justice to this simple stratagy
 
 ### Abstract Syntax Tree
 A tree struture that is used to store syntactic structure of a language
